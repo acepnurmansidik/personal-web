@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*css3 design scrollbar*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5eee95;
+}
+body {
+  position: relative;
+  overflow-x: hidden; /* Sembunyikan horizontal scrollbar */
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  background: #4b88b9;
+  height: 10vh;
+  width: 100vw;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  flex: 50%;
+}
+
+nav div.left-side {
+  padding-left: 90px;
+}
+
+nav div.left-side a,
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav div.right-side {
+  padding-right: 90px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-left: 40px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 40px;
+  padding: 1rem 0.6rem 1rem 0.6rem;
+}
+
+nav ul li:hover {
+  border-bottom: 0.3rem solid #d1a827;
+  transition: 0.3s;
+}
+
+nav ul li a.list-active {
+  color: #d1a827;
+  font-weight: 700;
+}
+
+/* START CONTACT ======================================== */
+
+.container-content {
+  background-image: linear-gradient(#4682b4, #00ffff);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: white;
+  display: flex;
+  width: 70vw;
+  border: 1px solid white;
+}
+
+.form-containerr {
+  width: 80%;
+}
+
+form {
+  padding: 3em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input:focus,
+form select,
+form textarea {
+  outline-color: rgb(236, 239, 243);
+}
+
+form input,
+form textarea,
+form select {
+  letter-spacing: 1px;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(29, 28, 28);
+  border: none;
+  margin-top: 7px;
+  padding: 12px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid rgb(21, 103, 255);
+}
+
+form .item {
+  margin: 0 20px 20px 0px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form select {
+  width: 100%;
+}
+
+form textarea {
+  height: 7rem;
+}
+
+form button {
+  font-weight: bold;
+  border: none;
+  height: 50px;
+  color: rgb(255, 255, 255);
+  width: 100px;
+  letter-spacing: 2px;
+  background-color: rgb(41, 44, 216);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+form button:hover {
+  color: rgb(41, 44, 216);
+  border: 2px solid rgb(41, 44, 216);
+  background-color: rgb(255, 255, 255);
+  transition: 0.7s;
+}
+
+.your-info {
+  flex: 1;
+  padding: 3em;
+  color: white;
+  background-color: rgb(41, 44, 216);
+}
+
+/* END CONTACT ======================================== */
+
+@media (max-width: 992px) {
+  .container .section,
+  .container-content {
+    flex-direction: column;
+    margin: 2.2em 0 2.2em 0;
+  }
+  .content {
+    flex-direction: column;
+  }
+  form {
+    order: 2;
+  }
+  .your-info {
+    order: 1;
+  }
+}
+@media (min-width: 992px) {
+  .container,
+  .container-content {
+    height: 90vh;
+  }
+}
+@media (max-width: 576px) {
+  .right-section .item-skill {
+    flex-direction: column;
+  }
+}

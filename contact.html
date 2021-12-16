@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/contact.css" />
+    <title>Contact Me</title>
+  </head>
+  <body>
+    <nav>
+      <div class="left-side">
+        <a href="index.html">
+          <h2>Acep Nurman Sidik</h2>
+        </a>
+      </div>
+      <div class="right-side">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="contact.html" class="list-active"> Contact Me </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-content">
+      <div class="content">
+        <form>
+          <div class="form-containerr">
+            <div class="item">
+              <label for="input-name">Name*</label><br />
+              <input
+                id="input-name"
+                type="text"
+                placeholder="Enter your name "
+              />
+            </div>
+            <div class="item">
+              <label for="input-Email">Email*</label><br />
+              <input
+                id="input-Email"
+                type="text"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="item">
+              <label for="input-Content">Subject*</label><br />
+              <select name="input-Content" id="input-Content">
+                <option value="Front End Developer">Front End Developer</option>
+                <option value="Back End Developer">Back End Developer</option>
+                <option value="Fullstack Developer">Fullstack Developer</option>
+              </select>
+            </div>
+            <div class="item">
+              <label for="input-Message">Message*</label><br />
+              <textarea
+                name="Message"
+                id="input-Message"
+                placeholder="Enter your Message"
+              ></textarea>
+            </div>
+            <button type="button" onclick="submitForm()">Submit</button>
+          </div>
+        </form>
+        <div class="your-info">
+          <h1>Your Message</h1>
+          <p>
+            Send me a message via the form below. I am very happy with your
+            suggestions to improve this website for everyone.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/contact.js"></script>
+  </body>
+</html>
