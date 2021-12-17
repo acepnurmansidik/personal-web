@@ -36,7 +36,7 @@ function addBlog(event) {
   if (!title || !content || !image) {
     alert("Kolom harap diisi untuk posting!");
   } else {
-    // enampilkan gambar
+    // menampilkan gambar
     image = URL.createObjectURL(image);
     // jika semuanya terisi masukan ke dalam objek
     // masukan new Date le postAt
@@ -49,7 +49,10 @@ function addBlog(event) {
     };
 
     blogs.push(blog);
-    title.innerHTML = "";
+
+    // clear form create post blog
+    document.querySelector("input").value = "";
+    document.querySelector("textarea").value = "";
 
     // tutup modal box
     document.getElementById("modal-container").classList.toggle("modal-toggle");
@@ -120,7 +123,7 @@ function getDistance(timeValue) {
   let distanceHours = Math.floor(distance / (1000 * 60 * 60));
   let distanceMinutes = Math.floor(distance / (1000 * 60));
   let distanceSecond = Math.floor(distance / 1000);
-
+  // cek kondisi berapa lama blog di posting
   if (distanceDay >= 1) {
     return `${distanceDay} Day ago`;
   } else {
