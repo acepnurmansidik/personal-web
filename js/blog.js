@@ -1,3 +1,14 @@
+// button add
+const buttonAdd = document.getElementById("add-blog");
+buttonAdd.addEventListener("click", function () {
+  document.getElementById("modal-container").classList.toggle("modal-toggle");
+});
+// button cancel
+const buttonCancel = document.getElementById("btn-ca");
+buttonCancel.addEventListener("click", function () {
+  document.getElementById("modal-container").classList.toggle("modal-toggle");
+});
+
 let blogs = [];
 let month = [
   "January",
@@ -16,15 +27,19 @@ let month = [
 
 function addBlog(event) {
   event.preventDefault();
-
+  // get value dari form
   let title = document.getElementById("input-blog-title").value;
   let content = document.getElementById("input-blog-content").value;
   let image = document.getElementById("input-blog-image").files[0];
 
+  // check isi value dari form
   if (!title || !content || !image) {
     alert("Kolom harap diisi untuk posting!");
   } else {
+    // enampilkan gambar
     image = URL.createObjectURL(image);
+    // jika semuanya terisi masukan ke dalam objek
+    // masukan new Date le postAt
     let blog = {
       title,
       content,
@@ -34,18 +49,19 @@ function addBlog(event) {
     };
 
     blogs.push(blog);
-    title = "";
+    title.innerHTML = "";
 
-    renderBlog();
+    // tutup modal box
     document.getElementById("modal-container").classList.toggle("modal-toggle");
   }
 }
 // menampilkan blog
 function renderBlog() {
+  // select content menggunakn id
   let createPostBlog = document.getElementById("contents");
-
+  // clear ketika ada yg post baru
   createPostBlog.innerHTML = "";
-
+  // tampilkan blog dari aray
   blogs.map((blog) => {
     createPostBlog.innerHTML += `
         <div id="contents" class="blog-list">
@@ -81,6 +97,7 @@ function renderBlog() {
   });
 }
 
+// function menampilkan ttl
 function getFullTime(time) {
   let date = time.getDate();
   let monthIndex = time.getMonth();
@@ -92,7 +109,7 @@ function getFullTime(time) {
   let fulltime = `${date} ${month[monthIndex]} ${year}, ${hours}:${minutes} WIB`;
   return fulltime;
 }
-
+// fungsi utk distance waktu
 function getDistance(timeValue) {
   let timePost = timeValue;
   let timeNow = new Date();
@@ -119,6 +136,7 @@ function getDistance(timeValue) {
   }
 }
 
+// menjalakan time post secara dinamis
 setInterval(() => {
   if (blogs.length) {
     renderBlog();
@@ -131,20 +149,3 @@ setInterval(() => {
       .setAttribute("style", "height: 40.3rem");
   }
 });
-
-const buttonAdd = document.getElementById("add-blog");
-
-buttonAdd.addEventListener("click", function () {
-  document.getElementById("modal-container").classList.toggle("modal-toggle");
-});
-
-const buttonCancel = document.getElementById("btn-ca");
-
-buttonCancel.addEventListener("click", function () {
-  document.getElementById("modal-container").classList.toggle("modal-toggle");
-});
-
-// const aa = document.getElementById("blog-container");
-// aa.addEventListener("click", function () {
-//   aa.setAttribute("style", "height: 40.3rem");
-// });
