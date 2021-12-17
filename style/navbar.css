@@ -24,10 +24,16 @@ body {
 
 /* Navbar */
 nav {
+  font-weight: bold;
   display: flex;
   background: #4b88b9;
   height: 10vh;
   width: 100vw;
+}
+
+nav h2 {
+  font-family: "Fuzzy Bubbles", cursive;
+  font-size: xx-large;
 }
 
 nav div {
