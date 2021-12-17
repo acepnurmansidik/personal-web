@@ -23,7 +23,6 @@ function addBlog(event) {
 
   if (!title || !content || !image) {
     alert("Kolom harap diisi untuk posting!");
-    getDistance();
   } else {
     image = URL.createObjectURL(image);
     let blog = {
@@ -123,6 +122,9 @@ function getDistance(timeValue) {
 setInterval(() => {
   if (blogs.length) {
     renderBlog();
+    document
+      .getElementById("blog-container")
+      .removeAttribute("style", "height: 40.3rem");
   } else {
     document
       .getElementById("blog-container")
