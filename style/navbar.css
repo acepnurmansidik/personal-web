@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*css3 design scrollbar*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5eee95;
+}
+body {
+  position: relative;
+  overflow-x: hidden; /* Sembunyikan horizontal scrollbar */
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  background: #4b88b9;
+  height: 10vh;
+  width: 100vw;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  flex: 50%;
+}
+
+nav div.left-side {
+  padding-left: 90px;
+}
+
+nav div.left-side a,
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav div.right-side {
+  padding-right: 90px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-left: 40px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 40px;
+  padding: 1rem 0.6rem 1rem 0.6rem;
+}
+
+nav ul li:hover {
+  border-bottom: 0.3rem solid #d1a827;
+  transition: 0.3s;
+}
+
+nav ul li a.list-active {
+  color: #d1a827;
+  font-weight: 700;
+}
