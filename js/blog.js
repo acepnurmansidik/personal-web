@@ -25,6 +25,20 @@ let month = [
   "Desember",
 ];
 
+// menjalakan time post secara dinamis
+setInterval(() => {
+  if (blogs.length) {
+    renderBlog();
+    document
+      .getElementById("blog-container")
+      .removeAttribute("style", "height: 40.3rem");
+  } else {
+    document
+      .getElementById("blog-container")
+      .setAttribute("style", "height: 40.3rem");
+  }
+});
+
 function addBlog(event) {
   event.preventDefault();
   // get value dari form
@@ -138,17 +152,3 @@ function getDistance(timeValue) {
     }
   }
 }
-
-// menjalakan time post secara dinamis
-setInterval(() => {
-  if (blogs.length) {
-    renderBlog();
-    document
-      .getElementById("blog-container")
-      .removeAttribute("style", "height: 40.3rem");
-  } else {
-    document
-      .getElementById("blog-container")
-      .setAttribute("style", "height: 40.3rem");
-  }
-});
